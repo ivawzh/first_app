@@ -18,6 +18,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:sample_app_development</jdbc-url>
       <user-name>sample_app</user-name>
+      <user-password>df9bdf98df99df9e</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
