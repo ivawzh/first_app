@@ -15,9 +15,14 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
-  gem 'spork-rails', '4.0.0'
   gem 'guard-rspec', '2.5.0'
+  gem 'rb-notifu', '0.0.4'
+  gem 'wdm', '0.1.0'
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork','1.5.0'
+  gem 'childprocess','0.3.6'
 end
+
 
 
 # Use SCSS for stylesheets
