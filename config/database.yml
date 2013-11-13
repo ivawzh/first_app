@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_production
+  database: sample-app-ivan_production
   pool: 5
   username: sample_app
   password:
