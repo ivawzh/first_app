@@ -20,7 +20,7 @@ describe User do
   describe "when name is not present" do
     before {  @user.name = ""  }
     it {  should_not be_valid  }
-  end:"13asdf@dasf.com")
+  end
 
   describe "when email is not present" do
     before {  @user.email="" }
@@ -64,6 +64,16 @@ describe User do
     it {  should_not be_valid}
   end
 
+  describe "email address with mixed case" do
+    let(:mixed_case_email) {"Foo@ASD2dsd.Com"}
+
+    it "should be saved as all lower-case" do
+      @user.email=mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
+    end
+  end
+
   describe "when password is not present" do
     before do
       @user= User.new(name: "Example User", email: "user@example.com",
@@ -96,7 +106,13 @@ describe User do
       it { should_not be_valid  }
     end
 
-
   end
 
+
+
+
+
+
+
 end
+
