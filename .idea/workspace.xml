@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3973f330-3158-4078-bfc1-5bd2e5153e21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3973f330-3158-4078-bfc1-5bd2e5153e21" time="1384308904813" ignored="false" />
+    <file path="/Dummy.txt" changelist="3973f330-3158-4078-bfc1-5bd2e5153e21" time="1384309773317" ignored="false" />
     <file path="/Gemfile" changelist="3973f330-3158-4078-bfc1-5bd2e5153e21" time="1384013072183" ignored="false" />
     <file path="/.gitignore" changelist="3973f330-3158-4078-bfc1-5bd2e5153e21" time="1379226301152" ignored="false" />
     <file path="/database.yml" changelist="3973f330-3158-4078-bfc1-5bd2e5153e21" time="1381297409014" ignored="false" />
@@ -83,10 +83,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.68113524">
+            <state line="26" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="28" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,19 +110,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="test.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="40" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_pages_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/requests/user_pages_spec.rb">
+      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
+            <state line="42" column="25" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.33273056">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="40" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,7 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20131108052948_add_index_to_users_email.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/spec/models/user_spec.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -168,6 +194,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -1091,7 +1118,11 @@
       <created>1384307926013</created>
       <updated>1384307926013</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed bugs in controller">
+      <created>1384309775476</created>
+      <updated>1384309775476</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1116,8 +1147,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="959" y="3" width="963" height="1050" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.7041485" order="3" side_tool="false" content_ui="tabs" />
@@ -1126,13 +1158,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39806867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29475984" sideWeight="0.43174252" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29475984" sideWeight="0.5682575" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29475984" sideWeight="0.5682575" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286026" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1181,7 +1212,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish user signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs in controller" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1199,25 +1230,12 @@
     <MESSAGE value="improve rspec, added click_links check, added helper file, added full title tester" />
     <MESSAGE value="commented out &quot;include application helper&quot; in utilities.rb" />
     <MESSAGE value="Finish user signup" />
+    <MESSAGE value="fixed bugs in controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="40" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/user_pages_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/user_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="0" selection-start="2394" selection-end="2394" vertical-scroll-proportion="0.0">
@@ -1235,23 +1253,9 @@
         <state line="10" column="0" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="3" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="3" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1307,7 +1311,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.68113524">
+        <state line="26" column="0" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="28" selection-start="946" selection-end="946" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="25" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.33273056">
           <folding />
         </state>
       </provider>
