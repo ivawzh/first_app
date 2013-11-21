@@ -15,9 +15,20 @@ module SessionsHelper
     @current_user ||=User.find_by(remember_token:encrypted_token)
   end
 
+  #def sign_in?
+  #  !current_user.nil?
+  #end
+
+
   def sign_in?
-    !current_user.nil?
+    if @current_user.nil?
+      !current_user.nil?
+    else
+      false
+    end
   end
+
+
 
   def sign_out
     cookies.delete(:remember_token)
