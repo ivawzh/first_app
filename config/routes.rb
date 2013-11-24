@@ -11,7 +11,7 @@ SampleApp::Application.routes.draw do
   match '/signup', to: 'users#new', via: 'get'
   match "/signin", to:'sessions#new', via: 'get'
   match "/signout", to: 'sessions#destroy', via: 'delete'
-  match "/setting/:id", to: "users#edit", via: 'get' #DIY only
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
