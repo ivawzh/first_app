@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update, :index]
   before_action :correct_user, only: [:edit,:update]
+  before_action :admin_user, only: :destroy
 
 
   def index
@@ -47,6 +48,15 @@ class UsersController < ApplicationController
   end
 
 
+  def destroy
+    user=User.find(params[:id])
+    user.destroy
+    flash[:success]="#{user.name} (#{user.email}) is deleted successfully"
+    store_current_location
+    redirect_back_or(users_url)
+  end
+
+
   private
 
   def user_params
@@ -76,6 +86,12 @@ class UsersController < ApplicationController
       flash[:error]="Sorry, you don't have the authority to edit this user's profile"
       redirect_to(root_url)
     end
+  end
+
+
+  def admin_user
+    flash[:error]="You don't have the right to delete this user"
+    redirect_to(root_url) if current_user.admin == false
   end
 
 
