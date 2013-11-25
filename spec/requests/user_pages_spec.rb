@@ -94,7 +94,7 @@ describe "UserPages" do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "Confirm Password", with: "foobar"
       end
 
 
@@ -164,6 +164,15 @@ describe "UserPages" do
       it{ should have_selector("div.alert.alert-error",text:"Sorry, you don't have the authority to edit this user's profile")}
       it{ should have_content("Welcome to the Sample App")}
     end
+  end
+
+
+  describe "admin should not be able to delete himself" do
+    let(:admin) { FactoryGirl.create(:admin) }
+    before do
+      sign_in admin
+    end
+    it { expect { delete user_path(admin) }.not_to change(User,:count) }
   end
 end
 

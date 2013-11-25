@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update, :index]
+  before_action :signed_in_user, only: [:edit, :update, :index, :destroy]
   before_action :correct_user, only: [:edit,:update]
   before_action :admin_user, only: :destroy
+  before_action :not_signed_in_user,only: [:new,:create]
 
 
   def index
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
 
   def destroy
     user=User.find(params[:id])
-    user.destroy
+    user.destroy if current_user != user
     flash[:success]="#{user.name} (#{user.email}) is deleted successfully"
     store_current_location
     redirect_back_or(users_url)
@@ -90,11 +91,19 @@ class UsersController < ApplicationController
 
 
   def admin_user
-    flash[:error]="You don't have the right to delete this user"
-    redirect_to(root_url) if current_user.admin == false
+    if !current_user.admin?
+      flash[:error]="You don't have the right to delete this user"
+      redirect_to(root_url)
+    end
   end
 
 
+  def not_signed_in_user
+    if signed_in?
+      flash[:error]="You can not create an new user account becasue you are already signed in"
+      redirect_to(root_url)
+    end
+  end
 
 
 end

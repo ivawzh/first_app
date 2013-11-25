@@ -25,6 +25,15 @@ describe "Authentication" do
     end
 
 
+    describe "before sign in should not see these links in header" do
+      it { should_not have_link('Profile')}
+      it { should_not have_link('Setting')}
+      it { should_not have_link('Sign out')}
+      it { should have_link('Sign in')}
+      it { should_not have_link('Users')}
+    end
+
+
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user)}
       before { sign_in user }
