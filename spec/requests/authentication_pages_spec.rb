@@ -68,11 +68,7 @@ describe "Authentication" do
           end
         end
       end
-    end
 
-
-    describe "for non-signed-in users" do
-      let(:user) {FactoryGirl.create(:user)}
 
       describe "in the Users controller" do
         before { visit edit_user_path(user) }
@@ -83,6 +79,24 @@ describe "Authentication" do
         before { patch user_path(user) }
         specify { expect(response).to redirect_to(signin_path)}
       end
+
+
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          #before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          let!(:micropost) { FactoryGirl.create(:micropost, content: "asdf", user: user) }
+          before { delete micropost_path(micropost) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+
+
     end
 
     describe "as wrong user" do
