@@ -179,7 +179,9 @@ describe "UserPages" do
     describe "request edit page of a user that is not existing" do
       before { visit edit_user_path({id:1212333})}
       it{ should have_selector("div.alert.alert-error",text:"Sorry, you don't have the authority to edit this user's profile")}
-      it{ should have_content("Welcome to the Sample App")}
+      #specify { expect(response).to redirect_to root_url }
+      it { should have_content(user.name) }
+      it { should have_content(user.email) }
     end
   end
 
