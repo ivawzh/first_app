@@ -181,7 +181,6 @@ describe "UserPages" do
       it{ should have_selector("div.alert.alert-error",text:"Sorry, you don't have the authority to edit this user's profile")}
       #specify { expect(response).to redirect_to root_url }
       it { should have_content(user.name) }
-      it { should have_content(user.email) }
     end
   end
 

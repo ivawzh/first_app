@@ -20,16 +20,16 @@ describe "MicropostPages" do
       before { click_button "Post" }
       it { should have_content('error') }
     end
-  end
 
 
-  describe "with valid information" do
-
-    before { fill_in 'micropost_content', with: "Lorem ipsum" }
-    it "should create a microsoft" do
-      expect { click_button "Post" }.to change(Micropost, :count).by(1)
+    describe "with valid information" do
+      before { fill_in 'micropost_content', with: "Lorem ipsum" }
+      it "should create a microsoft" do
+        expect { click_button "Post" }.to change(Micropost, :count).by(1)
+      end
     end
   end
+
 
 
 
