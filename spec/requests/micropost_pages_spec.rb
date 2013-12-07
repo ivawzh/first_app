@@ -30,7 +30,7 @@ describe "MicropostPages" do
     end
 
 
-    describe "delete micropost as" do
+    describe "delete micropost" do
       before { visit root_path }
       #let(:post) { FactoryGirl.create(:micropost, user: user, content: "This is whatever") }
       before do
@@ -50,6 +50,16 @@ describe "MicropostPages" do
       describe "delete post as a wrong user" do
         let(:post) { FactoryGirl.create(:micropost, user: FacotryGirl.create(:user), content: "This won't be deleted by a wrong user")}
         it{ expect{ delete micropost_path(:post) }.not_to change(Micropost, :count)}
+      end
+
+
+      describe "delete link should not be shown for wrong user" do
+        let(:another_user) { FactoryGirl.create(:user) }
+        before do
+          FactoryGirl.create(:micropost, user: another_user, content: "can't see delete on me")
+          visit user_path(another_user)
+        end
+          it{ should_not have_link(:delete)}
       end
     end
   end

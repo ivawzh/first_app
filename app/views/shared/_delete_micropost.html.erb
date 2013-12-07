@@ -1,0 +1,6 @@
+<% if current_user?(micropost.user) %>
+    <%= link_to"delete", micropost_path(micropost),
+               method: :delete,
+               title: "Destroy this post",
+               data: {confirm: "Are you sure you want to delelte this post?"} %>
+<% end %>
