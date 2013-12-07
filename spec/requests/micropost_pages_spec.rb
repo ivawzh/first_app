@@ -28,6 +28,30 @@ describe "MicropostPages" do
         expect { click_button "Post" }.to change(Micropost, :count).by(1)
       end
     end
+
+
+    describe "delete micropost as" do
+      before { visit root_path }
+      #let(:post) { FactoryGirl.create(:micropost, user: user, content: "This is whatever") }
+      before do
+        fill_in "micropost_content", with: "This is whatever"
+        click_button "Post"
+      end
+      it { should have_content("Micropost created!")}
+      it { should have_content("This is whatever") }
+      describe "click on delete as a right user" do #,js=true do
+        before do
+          click_link "delete"
+          #page.driver.browser.switch_to.alert.accept
+        end
+        it { should have_selector( "div.alert.alert-success",text:"You have deleted the microposts with content: This is whatever")}
+      end
+
+      describe "delete post as a wrong user" do
+        let(:post) { FactoryGirl.create(:micropost, user: FacotryGirl.create(:user), content: "This won't be deleted by a wrong user")}
+        it{ expect{ delete micropost_path(:post) }.not_to change(Micropost, :count)}
+      end
+    end
   end
 
 
