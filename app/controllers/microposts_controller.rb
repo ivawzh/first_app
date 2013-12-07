@@ -7,8 +7,12 @@ class MicropostsController < ApplicationController
       flash[:success]="Micropost created!"
       redirect_to root_url
     else
-      render "static_pages/home"
+      #@feed_items=[]
+      #render "static_pages/home"
+      flash[:error]="Error: The entered micropost is not valid"
+      redirect_to root_url
     end
+
 
 
   end
