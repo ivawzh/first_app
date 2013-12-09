@@ -1,0 +1,14 @@
+<% provide(:title,"Following") %>
+<% if @followed_users.any? %>
+    <ul>
+      <% @followed_users.each do |followed_user| %>
+          <li>
+            <div>
+              <span><%= gravatar_for(followed_user,size:30) %></span>
+              <br/>
+              <span><%= followed_user.name %></span>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+<% end %>

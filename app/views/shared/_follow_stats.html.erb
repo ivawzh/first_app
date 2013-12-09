@@ -1,12 +1,2 @@
-
-  <div class = "span2">
-    <span><%= number_of_following(user) %></span>
-    <span>following</span>
-  </div>
-
-  <div class = "span2">
-    <span><%= number_of_followers(user) %></span>
-    <span><%= "follower".pluralize(number_of_followers(user)) %></span>
-  </div>
-
-
+    <span><%= link_to "#{ number_of_following(user) } following", following_user_path(user) %></span>
+    <span><%= link_to pluralize(number_of_followers(user),"follower"),followers_user_path(user) %></span>
