@@ -18,6 +18,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts=@user.microposts.paginate(page: params[:page])
+    if current_user.following?(@user)
+      @relationship=current_user.relationships.find_by(followed_id: @user.id)
+    else
+      @relationship=current_user.relationships.new
+    end
   end
 
 
@@ -60,11 +65,17 @@ class UsersController < ApplicationController
 
 
   def following
-    user=User.find(params[:id])
-    @followed_users = user.followed_users
+    @user=User.find(params[:id])
+    @followed_users = @user.followed_users
     render "users/following"
   end
 
+
+  def followers
+    @user=User.find(params[:id])
+    @followers = @user.followers
+    render "users/followers"
+  end
 
 
   private

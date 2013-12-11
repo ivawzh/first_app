@@ -10,9 +10,16 @@
       </h1>
       <p><%= @user.email %></p>
     </section>
-    <%= render "shared/follow_stats", user: @user %>
+    <%= render "shared/stats", user: @user %>
   </aside>
   <div class="span8">
+    <% if current_user!=@user %>
+        <% if current_user.following?(@user) %>
+            <%= render "shared/unfollow_button", user: @user %>
+        <% else %>
+            <%= render "shared/follow_button", user: @user %>
+        <% end %>
+    <% end %>
       <% if @user.microposts.any? %>
             <h3>Microposts (<%= @user.microposts.count %>)</h3>
             <%= will_paginate @microposts %>

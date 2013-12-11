@@ -1,7 +1,7 @@
 @import "bootstrap";
 /* mixins, variables, etc. */
 $grayMediumLight: #eaeaea;
-$grayLight: #999;
+$grayLighter: #999;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -52,7 +52,7 @@ h2{
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $grayLighter;
 }
 
 p {
@@ -83,7 +83,7 @@ footer {
   margin-top: 45 px;
   padding-top: 5 px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $grayLighter;
 }
 
 footer a {
@@ -121,7 +121,7 @@ footer ul li {
 aside {
   section {
     padding:10px 0;
-    border-top:1px solid $grayLight;
+    border-top:1px solid $grayLighter;
     &:first-child {
       border: 0;
       padding-top:0;
@@ -140,6 +140,40 @@ aside {
     }
   }
 }
+
+.stats {
+  overflow: auto;
+  a {
+    float:left;
+    padding:0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    & :first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    & :hover{
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong{
+    display: block;
+  }
+}
+
+  .user_avatars {
+    overflow: auto;
+    margin-top: 10px;
+    .gravatar {
+      margin: 1px 1px;
+    }
+  }
+
+
+
+
+
 
 .gravatar {
   float:left;
@@ -181,9 +215,9 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $grayLight;
+    border-top: 1px solid $grayLighter;
     &:last-child {
-      border-bottom:1 px solid $grayLight;
+      border-bottom:1 px solid $grayLighter;
     }
   }
 }
@@ -206,7 +240,7 @@ input {
 }
 
 .timestamp {
-  color: $grayLight;
+  color: $grayLighter;
 }
 
 .gravatar {
@@ -220,3 +254,4 @@ aside {
     margin-bottom: 5px;
   }
 }
+

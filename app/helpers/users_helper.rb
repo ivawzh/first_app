@@ -8,14 +8,6 @@ module UsersHelper
   end
 
 
-  def number_of_following(user)
-    user.followed_users.size
-  end
-
-
-  def number_of_followers(user)
-    user.followers.size
-  end
 
 
 
