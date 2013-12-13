@@ -13,11 +13,13 @@
     <%= render "shared/stats", user: @user %>
   </aside>
   <div class="span8">
-    <% if current_user!=@user %>
-        <% if current_user.following?(@user) %>
-            <%= render "shared/unfollow_button", user: @user %>
-        <% else %>
-            <%= render "shared/follow_button", user: @user %>
+    <% unless current_user.nil? %>
+        <% if current_user!=@user %>
+            <% if current_user.following?(@user) %>
+                <%= render "shared/unfollow_button", user: @user %>
+            <% else %>
+                <%= render "shared/follow_button", user: @user %>
+            <% end %>
         <% end %>
     <% end %>
       <% if @user.microposts.any? %>

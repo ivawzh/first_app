@@ -8,27 +8,9 @@ module UsersHelper
   end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  def followed_users_of(user)
+    @followed_users||=user.followed_users
+  end
 
 
 

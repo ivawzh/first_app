@@ -1,14 +1,17 @@
-<% provide(:title,"Followers of #{@user.name}") %>
-<% if @followers.any? %>
-    <ul>
-      <% @followers.each do |follower| %>
-          <li>
-            <div>
-              <span><%= link_to gravatar_for(follower,size:30), follower %></span>
-              <br/>
-              <span><%= link_to follower.name, follower %></span>
-            </div>
-          </li>
-      <% end %>
-    </ul>
-<% end %>
+<% provide(:title,@title) %>
+
+<div class="row">
+  <aside class="span4">
+      <%= render "shared/user_info" %>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @followers.any? %>
+        <%= will_paginate @followers %>
+        <ul class="users">
+          <%= render @followers %>
+        </ul>
+        <%= will_paginate @followers %>
+    <% end %>
+  </div>
+</div>

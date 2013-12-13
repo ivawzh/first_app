@@ -1,8 +1,18 @@
-<%= link_to gravatar_for(current_user,size:52),current_user %>
-<h1><%= current_user.name %></h1>
-<span>
-  <%= link_to "view my profile",user_path(current_user) %>
-</span>
-<span>
-  <%= pluralize(current_user.microposts.count,"microposts") %>
-</span>
+<% @user ||=current_user %>
+<% @followed_users ||= followed_users_of(@user) %>
+  <section>
+    <%= gravatar_for @user %>
+    <h1><%= @user.name %></h1>
+    <span><%= link_to "view my profile", @user %></span>
+    <span><b>Microposts:</b><%= @user.microposts.count %></span>
+  </section>
+  <section>
+    <%= render 'shared/stats' %>
+    <% if @followed_users.any? %>
+        <div class="user_avatars">
+          <% @followed_users.each do |followed_user| %>
+              <%= link_to gravatar_for(followed_user,size:30),followed_user %>
+          <% end %>
+        </div>
+    <% end %>
+  </section>

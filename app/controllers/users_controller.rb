@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update, :index, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :index, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit,:update]
   before_action :admin_user, only: :destroy
   before_action :not_signed_in_user,only: [:new,:create]
@@ -18,10 +18,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts=@user.microposts.paginate(page: params[:page])
-    if current_user.following?(@user)
-      @relationship=current_user.relationships.find_by(followed_id: @user.id)
-    else
-      @relationship=current_user.relationships.new
+    unless current_user.nil?
+      if current_user.following?(@user)
+        @relationship=current_user.relationships.find_by(followed_id: @user.id)
+      else
+        @relationship=current_user.relationships.new
+      end
     end
   end
 
@@ -66,14 +68,16 @@ class UsersController < ApplicationController
 
   def following
     @user=User.find(params[:id])
-    @followed_users = @user.followed_users
+    @title = "Following of #{@user.name}"
+    @followed_users = @user.followed_users.paginate(page: params[:page])
     render "users/following"
   end
 
 
   def followers
     @user=User.find(params[:id])
-    @followers = @user.followers
+    @title="Followers of #{@user.name}"
+    @followers = @user.followers.paginate(page: params[:page])
     render "users/followers"
   end
 
@@ -111,7 +115,7 @@ class UsersController < ApplicationController
 
   def not_signed_in_user
     if signed_in?
-      flash[:error]="You can not create an new user account becasue you are already signed in"
+      flash[:error]="You can not create an new user account because you are already signed in"
       redirect_to(root_url)
     end
   end
