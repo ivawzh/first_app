@@ -1,4 +1,0 @@
-<%= form_for @relationship, html: { method: :delete } do |f| %>
-    <%= f.hidden_field :followed_id, value: @user.id %>
-    <%= f.submit :Unfollow, class: "btn btn-large" %>
-<% end %>

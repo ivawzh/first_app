@@ -1,24 +1,34 @@
 class RelationshipsController < ApplicationController
+  before_action :signed_in_user
 
   def create
-    #followed_user=User.find(params[:user][:id])
-    #@relationship=current_user.relationships.build(followed_id: followed_user.id)
-    #unless current_user.follow!(followed_user)
-    #  current_user.follow!(followed_user)
-    #end
-
-    current_user.relationships.create(followed_id: params[:relationship][:followed_id])
-    flash[:success]="You have followed that guy successfully"
-    store_current_location
-    redirect_back_or(current_user)
+    @user=User.find_by(id: params[:relationship][:followed_id])
+    current_user.follow! @user
+    #flash[:success]="You have followed that guy successfully"
+    respond_to do |format|
+      format.html do
+        store_current_location
+        redirect_back_or(current_user)
+      end
+      format.js
+    end
   end
 
 
   def destroy
-    current_user.relationships.find_by(followed_id: params[:relationship][:followed_id]).destroy
-    flash[:success]="You have unfollowed that guy"
-    store_current_location
-    redirect_back_or(current_user)
+    relationship=Relationship.find_by(id: params[:id])
+    unless relationship.nil?
+      @user=User.find(relationship.followed_id)
+      relationship.destroy
+    end
+    respond_to do |format|
+      format.html do
+        #flash[:success]="You have unfollowed that guy"
+        store_current_location
+        redirect_back_or(current_user)
+      end
+      format.js
+    end
   end
 
 

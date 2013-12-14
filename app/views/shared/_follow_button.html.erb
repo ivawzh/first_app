@@ -1,6 +1,0 @@
-<%= form_for(@relationship) do |f| %>
-    <!--so far without passing hidden field, we have inputs: current_user.id.   However, we still need to get followed_user.id-->
-    <%# f.hidden_field(:user, :id) %>
-    <%= f.hidden_field :followed_id, value: @user.id  %>
-    <%= f.submit "Follow", class: "btn btn-large" %>
-<% end %>
