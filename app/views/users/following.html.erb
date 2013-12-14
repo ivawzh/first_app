@@ -6,7 +6,7 @@
 
 
   <div class="span8">
-    <h3><%= @title %></h3>
+    <h3><%= "#{@user.name} is following these people" %></h3>
     <% if @followed_users.any? %>
         <%= will_paginate @followed_users %>
         <ul class="users" >

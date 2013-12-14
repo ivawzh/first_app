@@ -150,7 +150,7 @@ aside {
     color: gray;
     & :first-child {
       padding-left: 0;
-      border: 0;
+      border: 0px;
     }
     & :hover{
       text-decoration: none;
@@ -169,10 +169,6 @@ aside {
       margin: 1px 1px;
     }
   }
-
-
-
-
 
 
 .gravatar {
@@ -215,12 +211,19 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $grayMediumLight;
     &:last-child {
       border-bottom:1 px solid $grayLighter;
     }
   }
 }
+
+
+.user_stats {
+  float: right;
+  font-size: 0.8em;
+}
+
 
 
 //Microposts
@@ -255,3 +258,8 @@ aside {
   }
 }
 
+
+.paginate {
+  padding-right: 50px;
+  margin-right: 50px;
+}

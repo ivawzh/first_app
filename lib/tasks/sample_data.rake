@@ -4,6 +4,8 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_random_user_microposts
+    make_random_relationships
   end
 
   def make_users
@@ -34,7 +36,6 @@ namespace :db do
       ivan.microposts.create!(content: Faker::Lorem.sentence(5))
     end
 
-
     users = User.all(limit: 6)
     users.each do |user|
       50.times do
@@ -54,5 +55,23 @@ namespace :db do
     end
     followers = users[3..40]
     followers.each { |follower| follower.follow!(ivan) }
+  end
+
+
+  def make_random_user_microposts
+    400.times do
+      User.limit(1).offset(rand(User.count)).first.microposts.create!(content: Faker::Lorem.sentence(5))
+    end
+  end
+
+
+  def make_random_relationships
+    450.times do
+      follower= User.limit(1).offset(rand(User.count)).first
+      followed= User.limit(1).offset(rand(User.count)).first
+      unless follower.following?(followed)
+        follower.follow!(followed)
+      end
+    end
   end
 end

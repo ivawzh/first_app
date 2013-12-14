@@ -17,9 +17,16 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
 
+
   def feed
-# This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
+    followed_user_ids = "SELECT followed_id FROM relationships WHERE follower_id = :this_user"
+    Micropost.where("user_id IN (#{followed_user_ids}) OR user_id = :this_user", this_user: self.id)
+
+
+    #following_ids=self.followed_user_ids
+    #following_ids << self.id
+    #Micropost.where("user_id IN (:following_ids)", following_ids: following_ids)
+
   end
 
   def User.new_remember_token

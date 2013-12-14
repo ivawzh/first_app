@@ -4,5 +4,6 @@
       <%= render partial: 'shared/feed_item', collection: @feed_items %>
     </ol>
     <%= will_paginate @feed_items %>
+<% else %>
+    <h3>No microposts yet</h3>
 <% end %>
-<!-- TODO add indicator shows "NO MICROFPOSTS YET-->
