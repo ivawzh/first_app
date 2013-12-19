@@ -1,8 +1,9 @@
+<%= javascript_include_tag "micropost_form" %>
 <%= form_for(@micropost) do |f| %>
     <%= render "shared/error_messages",object: f.object %>
     <div class="field">
       <%= f.text_area :content, placeholder:"Compose new micropost..." %>
     </div>
+    <p id="character_count_down">140 characters remaining</p>
     <%= f.submit "Post",class: "btn btn-large btn-primary" %>
 <% end %>
-
