@@ -1,5 +1,3 @@
-# Ruby on Rails Tutorial: sample application
+# Twttier clone - by Ivan
 
-This is the sample application for
-the [*Ruby on Rails Tutorial*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/).
+This is a clone of Twitter. Please see the [live demo here](https://sample-app-ivan.herokuapp.com/).
